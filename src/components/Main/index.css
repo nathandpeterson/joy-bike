@@ -1,0 +1,17 @@
+.main {
+    margin-top: 1rem;
+}
+
+.main-image-container {
+    width: 100%;
+}
+
+.main-image-container img {
+    width: 100%;
+}
+
+.main-text {
+    background: gray;
+    color: white;
+    border-radius: 7.5px;
+}
