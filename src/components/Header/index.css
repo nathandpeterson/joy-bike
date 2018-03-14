@@ -1,8 +1,8 @@
 .header {
     border-radius: 5px;
-    margin-top: 5rem;
+    margin-top: 1rem;
     color: white;
-    background: pink;
+    background: hotpink;
     display: flex;
     justify-content: center;
     align-content: center;

@@ -6,12 +6,10 @@ import './index.css'
 class Main extends Component {
 
     render(){
-        return (
-            <div className='container main'>
-                <MainImage />
-                <MainText />
-            </div>
-        )
+         return <div className='container main'>
+                    <MainImage />
+                    <MainText />
+                </div>
     }
 }
 

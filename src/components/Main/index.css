@@ -1,9 +1,10 @@
 .main {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .main-image-container {
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 .main-image-container img {
@@ -11,7 +12,5 @@
 }
 
 .main-text {
-    background: gray;
-    color: white;
     border-radius: 7.5px;
 }

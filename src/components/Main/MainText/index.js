@@ -1,4 +1,5 @@
 import React from 'react'
+import { Panel } from 'react-bootstrap'
 
 const data = { ebike: {
     brand: 'Geero',
@@ -9,7 +10,7 @@ const data = { ebike: {
     features: ['Hidden battery & motor', 
                 'Range of distance up to 125 km', 
                 'Fully charged in only 3 hours',
-                'Frame Size 52cm'],
+                'Frame Size 52cm']
     }
 }
 
@@ -17,8 +18,10 @@ const MainText = (props) => {
     const { brand, title, price_num, price_unit, rating, features } = data.ebike 
     return (
         <div className='main-text'>
-            <h4>{brand}  {title}</h4>
-            <h5>{price_num} {price_unit}</h5>
+            <Panel>
+                <Panel.Heading>{brand}  {title}</Panel.Heading>
+                <Panel.Body>{price_num} {price_unit}</Panel.Body>
+            </Panel>
         </div>
     )
 }
