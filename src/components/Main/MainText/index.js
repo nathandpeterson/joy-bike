@@ -19,8 +19,9 @@ const MainText = (props) => {
     return (
         <div className='main-text'>
             <Panel>
-                <Panel.Heading>{brand}  {title}</Panel.Heading>
-                <Panel.Body>{price_num} {price_unit}</Panel.Body>
+                <p>{brand}</p> 
+                <p>{title}</p>
+                <p>{price_num} {price_unit}</p>
             </Panel>
         </div>
     )

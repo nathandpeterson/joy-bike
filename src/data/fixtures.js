@@ -1,6 +1,7 @@
 
 
 export const ebike = {
+    id: 1,
     brand: 'Geero',
     title: 'Vintage Vinyl Black',
     price_num: 2398.99,
@@ -16,9 +17,9 @@ export const ebike = {
 
 export const ebikes = [
     ebike,
-    {
+    {   id: 2,
         brand: 'Luna',
-        title: 'Luna Crusher 2',
+        title: 'Crusher 2',
         price_num: 3599.90,
         price_unit: 'dollars',
         rating: 4.5,
@@ -29,14 +30,14 @@ export const ebikes = [
                     'German made magnetic Rosenberger charge connector',
                     '21 piece Luna Ebike Tool Kit']
     },
-    {
+    {   id: 3,
         brand: 'Kalkhoff',
-        title: 'Kalkhoff Agattu B7',
+        title: 'Agattu B7',
         price_num: 2499.00,
         price_unit: 'dollars',
         rating: 5,
         source_url: 'https://ebikestore.com/shop/kalkhoff-agattu-b7-performance/',
-        img_url: 'https://i1.wp.com/ebikestore.com/wp-content/uploads/2017/03/kalkhoff_agattu-b7_stepthru_blue.jpg?resize=450%2C450&ssl=1', 
+        img_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz6TS5h_1YLbyc8BIIcjuSg5f5yvy2AZWQHRx-q2IJw6D4AlXe', 
         features: ['Bosch Performance Line motor', 
                     'Bosch 400 Watt Powerpack battery', 
                     'Magura HS11 hydraulic rim brake',
