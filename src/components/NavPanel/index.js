@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { loadBikes } from '../../actions'
 
 import NavPreview from './NavPreview'
@@ -12,12 +13,14 @@ class NavPanel extends Component {
     }
 
     render(){
+        
         if(!this.props.ebikes.length) return <div />
         const { ebikes } = this.props
         return (
             <div className='container nav-panel'>
                {ebikes.map(ebike => {
-                   return <NavPreview key={ebike.id} ebike={ebike} />
+                   return <NavPreview   key={ebike.id} 
+                                        ebike={ebike} />
                })}
             </div>
         )
@@ -28,4 +31,8 @@ function mapStateToProps(state){
     return { ebikes: state.ebikes }
 }
 
-export default connect(mapStateToProps, { loadBikes } )(NavPanel)
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({ loadBikes }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps )(NavPanel)

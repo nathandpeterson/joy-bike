@@ -14,14 +14,8 @@ import './index.css'
 
 class Main extends Component {
 
-    componentDidMount(){
-        // import loadBikes from actions
-        // Load bikes from fixtures/API
-        if(!this.props.ebikes.length) this.props.loadBikes()
-    }
-
     render(){
-        console.log('ebikes?',this.props.ebikes)
+        console.log('MAIN',this.props)
          return <div>
                     <Header />
                     <div className='container main'>
@@ -34,7 +28,7 @@ class Main extends Component {
 }
 
 function mapStateToProps(state){
-    return { ebikes: state.ebikes }
+    return { selectedBike: state.selectedBike, ebikes: state.ebikes }
 }
 
-export default connect(mapStateToProps, { loadBikes } )(Main)
+export default connect(mapStateToProps)(Main)

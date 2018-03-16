@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux'
-import { ebikesReducer } from './ebikesReducer'
+import { SelectedReducer } from './SelectedReducer'
+import { EbikesReducer } from './EbikesReducer'
 
 
-const rootReducer = combineReducers({
-    ebikes: ebikesReducer
+export default combineReducers({
+    ebikes: EbikesReducer,
+    selectedBike: SelectedReducer
 })
 
-export default rootReducer
