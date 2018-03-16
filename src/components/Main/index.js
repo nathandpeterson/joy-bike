@@ -15,7 +15,7 @@ import './index.css'
 class Main extends Component {
 
     render(){
-        console.log('MAIN',this.props)
+        
          return <div>
                     <Header />
                     <div className='container main'>
