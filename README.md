@@ -1,4 +1,4 @@
-# Joy-Bike 
+# Joy Bike 
 
 A website dedicated to the pleasure of shopping for ebikes online.
 
