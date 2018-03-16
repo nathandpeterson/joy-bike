@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Panel } from 'react-bootstrap'
 
 const MainText = ({ selectedBike }) => {
-    if(!selectedBike) return <div />
+    if(!selectedBike.title) return <div />
     const { brand, title, price_num, price_unit } = selectedBike
     return (
         <div className='main-text'>

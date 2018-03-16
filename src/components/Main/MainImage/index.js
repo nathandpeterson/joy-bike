@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 const noSelection = () => (
     <div>
         <div className='bike-icon'>
-            <i class="fas fa-bicycle"></i>
+            <i className="fas fa-bicycle"></i>
         </div>
         <h5>Just pick an ebike to get started</h5>
     </div> 
