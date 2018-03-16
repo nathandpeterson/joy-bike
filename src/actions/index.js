@@ -1,16 +1,19 @@
+import { ebikes } from '../data/fixtures'
+
 export const SET_BIKE = 'SET_BIKE'
 export const LOAD_BIKES = 'LOAD_BIKES'
 
-export function setBike(bike){
+
+export function setBike(ebike){
     return {
         type: SET_BIKE,
-        action: bike
+        action: ebike
     }
 }
 
-export function loadBikes(bikes){
+export function loadBikes(state){
     return {
         type: LOAD_BIKES,
-        action: bikes
+        ebikes
     }
 }

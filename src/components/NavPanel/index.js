@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
-import { ebikes } from '../../data/fixtures'
+import { connect } from 'react-redux'
+import { loadBikes } from '../../actions'
+
+import NavPreview from './NavPreview'
 import './index.css'
-import NavPreview from './NavPreview';
-
-
 
 class NavPanel extends Component {
 
+    componentDidMount(){
+        if(!this.props.ebikes.length) this.props.loadBikes()
+    }
+
     render(){
+        if(!this.props.ebikes.length) return <div />
+        const { ebikes } = this.props
         return (
             <div className='container nav-panel'>
                {ebikes.map(ebike => {
@@ -17,5 +23,9 @@ class NavPanel extends Component {
         )
     }
 }
-    
-    export default NavPanel
+
+function mapStateToProps(state){
+    return { ebikes: state.ebikes }
+}
+
+export default connect(mapStateToProps, { loadBikes } )(NavPanel)

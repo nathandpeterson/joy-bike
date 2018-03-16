@@ -6,7 +6,7 @@ import MainText from './MainText'
 import Header from '../Header'
 import NavPanel from '../NavPanel'
 
-import { setBike, loadBikes } from '../../actions'
+import { loadBikes } from '../../actions'
 
 import { ebike } from '../../data/fixtures'
 
@@ -16,11 +16,12 @@ class Main extends Component {
 
     componentDidMount(){
         // import loadBikes from actions
-        // Load bikes from fixtures/API 
-        console.log(this.props)
+        // Load bikes from fixtures/API
+        if(!this.props.ebikes.length) this.props.loadBikes()
     }
 
     render(){
+        console.log('ebikes?',this.props.ebikes)
          return <div>
                     <Header />
                     <div className='container main'>
@@ -33,7 +34,7 @@ class Main extends Component {
 }
 
 function mapStateToProps(state){
-    return { bike: state.bike }
+    return { ebikes: state.ebikes }
 }
 
-export default connect(mapStateToProps, null)(Main)
+export default connect(mapStateToProps, { loadBikes } )(Main)
