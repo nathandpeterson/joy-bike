@@ -3,7 +3,7 @@
 }
 
 .nav-preview-container:hover {
-    background: gray;
+    background: black;
     transition: 1s;
     cursor: pointer;
 }

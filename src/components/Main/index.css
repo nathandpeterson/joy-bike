@@ -14,3 +14,12 @@
 .main-text {
     border-radius: 7.5px;
 }
+
+.bike-icon {
+    color: white;
+    font-size: 5rem;
+    background: #2EC4B6;
+    display: inline;
+    padding: 1rem;
+    border-radius: 7.5px;
+}
