@@ -3,16 +3,13 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from '../../reducers'
 import { Switch, BrowserRouter, Route } from 'react-router-dom'
-
-import Header from '../Header'
 import Main from '../Main'
-import NavPanel from '../NavPanel'
 import '../../index.css'
 
 const store = createStore(reducers)
 store.subscribe(() => console.log('store', store.getState()))
 
-const About = () => <h1>JOYBIKE IS FOR YOU</h1>
+const About = () => <h1>JOYBIKE IS ABOUT JOY + BIKE</h1>
 
 class App extends Component {
 

@@ -6,10 +6,19 @@ import MainText from './MainText'
 import Header from '../Header'
 import NavPanel from '../NavPanel'
 
+import { setBike, loadBikes } from '../../actions'
+
 import { ebike } from '../../data/fixtures'
+
 import './index.css'
 
 class Main extends Component {
+
+    componentDidMount(){
+        // import loadBikes from actions
+        // Load bikes from fixtures/API 
+        console.log(this.props)
+    }
 
     render(){
          return <div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Panel } from 'react-bootstrap'
 import { ebikes } from '../../data/fixtures'
 import './index.css'
 import NavPreview from './NavPreview';
