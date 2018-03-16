@@ -6,7 +6,7 @@ const noSelection = () => (
         <div className='bike-icon'>
             <i className="fas fa-bicycle"></i>
         </div>
-        <h5>Just pick an ebike to get started</h5>
+        <h5>Just select an ebike to get started</h5>
     </div> 
 )
 
