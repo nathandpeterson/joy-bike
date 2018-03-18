@@ -4,7 +4,7 @@ html,body {
     margin: 0
 }
   
-  .hero {
+.hero {
     min-height: 100%;
     position: relative;
     overflow: hidden;
@@ -13,10 +13,28 @@ html,body {
     flex-direction: column;
   }
 
+  .guest {
+    padding: 1.2rem;
+  }
+
   .landing-buttons {
-      margin: 2rem;
+      margin: 2rem auto;
       width: 50%;
       opacity: .45;
+      font-size: 1.5rem;
+  }
+
+  .landing-buttons:hover {
+    opacity: .85;
+    transition: 1s;
+  }
+
+  .form-body {
+    color: black;
+  }
+
+  .form-body a {
+    text-decoration: none;
   }
 
 .hero::before {

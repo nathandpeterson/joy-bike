@@ -18,8 +18,9 @@ class App extends Component {
             <Provider store={store}>
                <BrowserRouter>
                     <Switch>
-                        <Route exact path='/new' component={ AddEBike } />
-                        <Route exact path = '/guest' component={ Main }/>                        <Route path='/' component={ Landing} />
+                        <Route exact path='/new-ebike' component={ AddEBike } />
+                        <Route exact path='/guest' component={ Main }/>                
+                        <Route path='/' component={ Landing} />
                     </Switch>
                 </BrowserRouter>
             </Provider>
