@@ -4,13 +4,13 @@ import { Panel } from 'react-bootstrap'
 
 const MainText = ({ selectedBike }) => {
     if(!selectedBike.title) return <div />
-    const { brand, title, price_num, price_unit } = selectedBike
+    const { brand, title, price_num } = selectedBike
     return (
         <div className='main-text'>
             <Panel>
                 <p>{brand}</p> 
                 <p>{title}</p>
-                <p>{price_num} {price_unit}</p>
+                <p>${price_num.toFixed(2)}</p>
             </Panel>
         </div>
     )

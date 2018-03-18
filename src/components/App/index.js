@@ -4,12 +4,11 @@ import { Provider } from 'react-redux'
 import reducers from '../../reducers'
 import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import Main from '../Main'
+import AddEBike from '../AddEBike'
 import '../../index.css'
 
 const store = createStore(reducers)
 store.subscribe(() => console.log('store', store.getState()))
-
-const About = () => <h1>JOYBIKE IS ABOUT JOY + BIKE</h1>
 
 class App extends Component {
 
@@ -18,7 +17,7 @@ class App extends Component {
             <Provider store={store}>
                <BrowserRouter>
                     <Switch>
-                        <Route path='/about' component={ About } />
+                        <Route path='/new' component={ AddEBike } />
                         <Route path='/' component={ Main } />
                     </Switch>
                 </BrowserRouter>
