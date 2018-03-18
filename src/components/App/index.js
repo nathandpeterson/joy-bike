@@ -5,6 +5,7 @@ import reducers from '../../reducers'
 import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import Main from '../Main'
 import AddEBike from '../AddEBike'
+import Landing from '../Landing'
 import '../../index.css'
 
 const store = createStore(reducers)
@@ -17,8 +18,8 @@ class App extends Component {
             <Provider store={store}>
                <BrowserRouter>
                     <Switch>
-                        <Route path='/new' component={ AddEBike } />
-                        <Route path='/' component={ Main } />
+                        <Route exact path='/new' component={ AddEBike } />
+                        <Route exact path = '/guest' component={ Main }/>                        <Route path='/' component={ Landing} />
                     </Switch>
                 </BrowserRouter>
             </Provider>

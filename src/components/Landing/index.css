@@ -1,0 +1,49 @@
+
+html,body {
+    height: 100%;
+    margin: 0
+}
+  
+  .hero {
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-buttons {
+      margin: 2rem;
+      width: 50%;
+      opacity: .45;
+  }
+
+.hero::before {
+      background-image: url('https://images.unsplash.com/photo-1456990493443-0d0ee2a630cc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c61ac03e9a7ee096b7357f7dee79d0e8&auto=format&fit=crop&w=1050&q=80');
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      will-change: transform;
+      z-index: -1;
+  }
+
+  @media(min-width:400px){
+
+    .landing-buttons {
+       width: 40%;
+    }
+  }
+
+  @media(min-width:650px){
+  
+    .landing-buttons {
+        width: 30%;
+    }
+  }

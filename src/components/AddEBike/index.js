@@ -30,6 +30,7 @@ export default class AddEBike extends Component {
     render(){
         return (
         <div>
+            <h3>add a new ebike</h3>
             <form onSubmit={this.handleSubmit}>
                 {this.fields.map((field, i)=> this.renderField(field, i))}
                 <Button type='submit'>SUBMIT</Button>
