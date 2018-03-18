@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Button, Panel } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Login from './Login'
+import Signup from './Signup'
 import './index.css'
 
 class Landing extends Component {
@@ -14,9 +15,7 @@ class Landing extends Component {
                     <Button className='guest landing-buttons'>continue as guest</Button>
                 </Link>
                 <Login />
-                <Link to='/'>
-                    <Button className='landing-buttons'>sign up</Button>
-                </Link>
+                <Signup />
             </div>
         )
     }

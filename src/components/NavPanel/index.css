@@ -3,7 +3,7 @@
 }
 
 .nav-preview-container:hover {
-    background: black;
+    background: cyan;
     transition: 1s;
     cursor: pointer;
 }
@@ -19,7 +19,7 @@
 .nav-panel h4 {
     border-radius: 3px;
     padding: .75rem;
-    background: hotpink;
+    background: darkorchid;
     color: white;
 }
 
