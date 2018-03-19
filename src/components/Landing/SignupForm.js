@@ -1,15 +1,27 @@
 import React, { Component } from 'react'
 import { FormControl, FormGroup, Button } from 'react-bootstrap'
 
+const initialState = {  first_name: '', 
+                        last_name: '', 
+                        email: '', 
+                        password: '', 
+                        password_confirm: ''}
 
 class LoginForm extends Component {
-    state = {email: '', password: ''}
 
-    fields = ['email', 'password']
+    state = {...initialState}
+
+    fields = Object.keys(initialState)
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.setState({email: '', password: ''})
+        this.verifyFields()
+        this.setState({...initialState})
+    }
+
+    verifyFields = () => {
+        // If empty fields, throw err
+        // If passwords don't match throw error
     }
 
     handleChange = (e) => {
@@ -17,12 +29,14 @@ class LoginForm extends Component {
         this.setState({[field]: e.target.value})
     }
     renderField = (field, i) => {
+        const type = field.slice(0,8) === 'password' ? 'password' : 'text'
+        const placeholder = field.replace(/_/g, " ")
         return <FormGroup key={i}>
                     <FormControl
-                        type={field}
+                        type={type}
                         data-tag={field}
                         value={this.state[field]}
-                        placeholder={field}
+                        placeholder={placeholder}
                         onChange={this.handleChange}
                     />  
                 </FormGroup>

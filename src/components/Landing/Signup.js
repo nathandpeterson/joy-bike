@@ -1,4 +1,5 @@
 import React from 'react'
+import SignupForm from './SignupForm'
 import { Panel } from 'react-bootstrap'
 
 const Signup = () => {
@@ -11,7 +12,7 @@ const Signup = () => {
             </Panel.Heading>
                 <Panel.Collapse>
                     <Panel.Body className='form-body'>
-                        sign up form
+                        <SignupForm />
                     </Panel.Body>
                 </Panel.Collapse>
         </Panel>
