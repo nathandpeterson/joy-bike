@@ -4,8 +4,8 @@ import { FormControl, FormGroup, Button } from 'react-bootstrap'
 
 export default class AddEBike extends Component {
 
-    state = {title: '', brand: '', price: '', source_url: '', image_url: ''}
-    fields = ['title', 'brand', 'price', 'source_url', 'image_url']
+    state = {name: '', brand: '', price: '', source_url: '', image_url: ''}
+    fields = ['name', 'brand', 'price', 'source_url', 'image_url']
 
     handleChange = (e) => {
         const field = e.target.getAttribute('data-tag')

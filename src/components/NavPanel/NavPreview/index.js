@@ -9,7 +9,7 @@ const NavPreview = ( { ebike, setSelectedBike} ) => {
                         onClick={ () => setSelectedBike(ebike) }>
                     <img className='nav-preview-img' 
                         src={ebike.img_url}
-                        alt={ebike.title}/>
+                        alt={ebike.name}/>
                     <h4>{ebike.brand}</h4>
                 </Panel>
 }

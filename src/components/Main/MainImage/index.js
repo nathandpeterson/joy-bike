@@ -15,7 +15,7 @@ const MainImage = ({ selectedBike }) => {
     return (
     <div className='main-image-container'>
         <img src={ selectedBike.img_url } 
-            alt={selectedBike.title}/>
+            alt={selectedBike.name}/>
     </div>
 )}
 
