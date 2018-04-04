@@ -7,6 +7,7 @@ import axios from 'axios'
 import Main from '../Main'
 import AddEBike from '../AddEBike'
 import Landing from '../Landing'
+import Example from '../Transitions/Example'
 import { loadBikes } from '../../actions'
 import '../../index.css'
 
@@ -29,6 +30,7 @@ class App extends Component {
             <Provider store={store}>
                <BrowserRouter>
                     <Switch>
+                        <Route exact path='/example' component={Example} />
                         <Route exact path='/new-ebike' component={ AddEBike } />
                         <Route exact path='/guest' component={ Main }/>                
                         <Route path='/' component={ Landing} />
