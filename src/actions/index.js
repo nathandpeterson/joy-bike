@@ -2,6 +2,7 @@ import { ebikes } from '../data/fixtures'
 
 export const SET_SELECTED_BIKE = 'SET_SELECTED_BIKE'
 export const LOAD_BIKES = 'LOAD_BIKES'
+export const SIGN_UP = 'SIGN_UP'
 
 export function setSelectedBike(selectedBike){
     return {
@@ -15,5 +16,12 @@ export function loadBikes(){
     return {
         type: LOAD_BIKES,
         ebikes
+    }
+}
+
+export function signUp(data){
+    return {
+        type: SIGN_UP,
+        data
     }
 }
