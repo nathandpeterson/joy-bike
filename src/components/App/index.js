@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 import reducers from '../../reducers'
 import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import axios from 'axios'
@@ -13,7 +14,7 @@ import '../../index.css'
 
 const API_DEV = 'http://localhost:5000'
 
-const store = createStore(reducers)
+const store = createStore(reducers, applyMiddleware(thunk))
 store.subscribe(() => console.log('store', store.getState()))
 
 class App extends Component {

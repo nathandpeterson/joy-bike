@@ -10,58 +10,41 @@ const initialState = {  first_name: '',
                         password: '', 
                         password_confirm: ''}
 
-class LoginForm extends Component {
+class SignupForm extends Component {
 
     state = {...initialState}
 
     fields = Object.keys(initialState)
 
-    renderField(field){
+    onSubmit(values){
+        this.props.signUp(values, () => {
+            console.log('redirect me')
+        })
+    }
+
+    fieldRender(field){
         const { meta : { touched, error }, label, input } = field
-        const errorClass = `form-group ${touched && error ? 'has-danger': ''}`
-        return (
+        const errorClass = `form-group ${field.touched && field.error ? 'has-danger': ''}`
+        return ( 
             <div className={errorClass}>
-              <label>{label}</label>
-              <input className='form-control' type='text' {...input} />
-              <div className='form-control-feedback'>
+                <label>{label}</label>
+                <input className='form-control' type='text' {...input} />
+                <div className='form-control-feedback'>
                 {touched ? error : ''}
-              </div>
+                </div>
             </div>
-          ) 
-    }
-
-    handleSubmit = (values) => {
-        this.props.signUp(values)
-        this.setState({...initialState})
-    }
-
-    handleChange = (e) => {
-        const field = e.target.getAttribute('data-tag')
-        this.setState({[field]: e.target.value})
-    }
-    // renderField = (field, i) => {
-    //     const type = field.slice(0,8) === 'password' ? 'password' : 'text'
-    //     const placeholder = field.replace(/_/g, " ")
-    //     return <FormGroup key={i}>
-    //                 <FormControl
-    //                     type={type}
-    //                     data-tag={field}
-    //                     value={this.state[field]}
-    //                     placeholder={placeholder}
-    //                     onChange={this.handleChange}
-    //                 />  
-    //             </FormGroup>
-    // }
-
-    fieldRender = (field, i) => {
-        return <Field key={i} name={field} label={field} component={this.renderField} />
+        )
     }
 
     render(){
+        const { handleSubmit } = this.props
         return(
-            <form onSubmit={this.handleSubmit}>
-                {this.fields.map((field, i) => this.fieldRender(field, i))}
-                <Button onClick={this.handleSubmit}>Submit</Button>
+            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                <Field name='first_name' label='First Name' component={this.fieldRender} />
+                <Field name='last_name' label='Last Name' component ={this.fieldRender} />
+                <Field name='email' label='Email' component ={fieldRender} />
+                <Field name='password' label='Password' component ={fieldRender} />
+                <Button type='submit'>Submit</Button>
             </form>
         )
     }
@@ -77,5 +60,18 @@ function validate(values){
     return errors
 }
 
+const fieldRender = ({ meta : { touched, error }, label, input } ) => {
+    const errorClass = `form-group ${touched && error ? 'has-error': ''}`
+    return ( 
+        <div className={errorClass}>
+            <label>{label}</label>
+            <input className='form-control' type='text' {...input} />
+            <div className='form-control-feedback'>
+            {touched ? error : ''}
+            </div>
+        </div>
+    )
+}
+
 export default reduxForm({validate, form: 'SignupForm'})(
-    connect(null, { signUp })(LoginForm))
+    connect(null, { signUp })(SignupForm))

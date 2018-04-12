@@ -1,4 +1,5 @@
 import { ebikes } from '../data/fixtures'
+import axios from 'axios'
 
 export const SET_SELECTED_BIKE = 'SET_SELECTED_BIKE'
 export const LOAD_BIKES = 'LOAD_BIKES'
@@ -19,9 +20,16 @@ export function loadBikes(){
     }
 }
 
-export function signUp(data){
-    return {
-        type: SIGN_UP,
-        data
+export function signUp(data, cb){
+    const formattedData = {...data}
+    delete formattedData.email
+    const request = axios.post(`http://localhost:5000/user/${data.email}`, formattedData)
+
+    return (dispatch) => {
+        request.then(response => {
+            cb()
+        dispatch({ type: SIGN_UP, 
+                    payload: response.data })
+        })
     }
 }
