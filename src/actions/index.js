@@ -4,6 +4,7 @@ import axios from 'axios'
 export const SET_SELECTED_BIKE = 'SET_SELECTED_BIKE'
 export const LOAD_BIKES = 'LOAD_BIKES'
 export const SIGN_UP = 'SIGN_UP'
+export const ADD_EBIKE = 'ADD_EBIKE'
 
 export function setSelectedBike(selectedBike){
     return {
@@ -31,5 +32,13 @@ export function signUp(data, cb){
         dispatch({ type: SIGN_UP, 
                     payload: response.data })
         })
+    }
+}
+
+export function addEBike(){
+    const request = {}
+    return {
+        type: ADD_EBIKE,
+        payload: request
     }
 }

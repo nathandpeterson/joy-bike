@@ -8,6 +8,7 @@ import { reducer as formReducer} from 'redux-form'
 export default combineReducers({
     ebikes: EbikesReducer,
     selectedBike: SelectedReducer,
+    addEbike: EbikesReducer,
     form: formReducer
 })
 
