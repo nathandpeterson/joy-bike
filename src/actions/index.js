@@ -27,10 +27,10 @@ export function signUp(data, cb){
     const request = axios.post(`http://localhost:5000/user/${data.email}`, formattedData)
 
     return (dispatch) => {
-        request.then(response => {
+        request.then(({data}) => {
             cb()
         dispatch({ type: SIGN_UP, 
-                    payload: response.data })
+                    payload: data })
         })
     }
 }
